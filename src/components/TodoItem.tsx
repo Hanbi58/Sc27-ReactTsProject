@@ -1,16 +1,15 @@
 import classes from "./TodoItem.module.css";
 
 const TodoItem: React.FC<{
-  id: string;
   text: string;
-  onDelete: (id: string) => void;
+  onDelete: () => void;
 }> = (props) => {
-  const onDeleteHandler = (event: React.MouseEvent) => {
-    props.onDelete(props.id);
-  };
+  // const onDeleteHandler = (event: React.MouseEvent) => {
+  //   props.onDelete(props.id);
+  // };
 
   return (
-    <li className={classes.item} onClick={onDeleteHandler}>
+    <li className={classes.item} onClick={props.onDelete}>
       {props.text}
     </li>
   );
